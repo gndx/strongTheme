@@ -1,0 +1,31 @@
+{
+  "name": "strongtheme",
+  "version": "0.1.0",
+  "description": "Free Landing Page for fitness site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "browser-sync start --server --files 'css/*.css', *.html",
+    "stylus": "stylus -u nib -c -w -o css/chewiekie.css index.styl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gndx/strongTheme.git"
+  },
+  "keywords": [
+    "landingpage",
+    "theme",
+    "fitness"
+  ],
+  "author": "Oscar Barajas <oscar@dragons.mx>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gndx/strongTheme/issues"
+  },
+  "homepage": "https://github.com/gndx/strongTheme#readme",
+  "devDependencies": {
+    "browserify": "^15.1.0",
+    "nib": "^1.1.2",
+    "stylus": "^0.54.5"
+  }
+}
