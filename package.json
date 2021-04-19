@@ -1,12 +1,14 @@
 {
-  "name": "strongtheme",
+  "name": "strongTheme",
   "version": "0.1.0",
-  "description": "Free Landing Page for fitness site",
-  "main": "index.js",
+  "description": "Free landing page theme for a Fitness Website",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "browser-sync start --server --files 'css/*.css', *.html",
-    "stylus": "stylus -u nib -c -w -o css/chewiekie.css index.styl"
+    "clear:css": "rimraf css && mkdir css && touch css/chewiekie.css",
+    "stylus:watch": "stylus -u nib -c -w -o css/chewiekie.css index.styl",
+    "start:server": "browser-sync start --server --files 'css/*.css', *.html",
+    "prestart": "npm run clear:css",
+    "start": "concurrently \"npm run stylus:watch\" \"npm run start:server\""
   },
   "repository": {
     "type": "git",
@@ -24,8 +26,11 @@
   },
   "homepage": "https://github.com/gndx/strongTheme#readme",
   "devDependencies": {
+    "browser-sync": "^2.23.6",
     "browserify": "^15.1.0",
+    "concurrently": "^3.5.1",
     "nib": "^1.1.2",
+    "rimraf": "^2.6.2",
     "stylus": "^0.54.5"
   }
 }
